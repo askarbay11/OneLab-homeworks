@@ -42,9 +42,9 @@ public class FightController {
         log.info("Our warriors: " + arena.getFighters());//вот эту
         // выбросить в лузеров из бойцов всех тех, кто не прошел допинг контроль
         List<Fighter> losers = new ArrayList<>();
-        for (int i = 0; i < fighters.size(); i++) {
+        for(int i=0;i<fighters.size();i++) {
             Fighter fighter = fighters.get(i);
-            if (dopingService.checkFigher(fighter)) {
+            if (dopingService.checkFigher(fighter)){
                 losers.add(fighter);
             }
         }
