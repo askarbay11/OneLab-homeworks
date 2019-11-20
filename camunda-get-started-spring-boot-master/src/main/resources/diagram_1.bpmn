@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_01mk8au" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.4.1">
+  <bpmn:process id="Process_1hlzxs8" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Loan Request Received">
+      <bpmn:outgoing>SequenceFlow_1p6tybd</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_1y4he53" name="Check the request">
+      <bpmn:incoming>SequenceFlow_1p6tybd</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_026hstg</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_0on0jn9" name="Loan Request Processed">
+      <bpmn:incoming>SequenceFlow_026hstg</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1p6tybd" sourceRef="StartEvent_1" targetRef="Task_1y4he53" />
+    <bpmn:sequenceFlow id="SequenceFlow_026hstg" sourceRef="Task_1y4he53" targetRef="EndEvent_0on0jn9" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1hlzxs8">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="162" y="142" width="70" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1y4he53_di" bpmnElement="Task_1y4he53">
+        <dc:Bounds x="340" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0on0jn9_di" bpmnElement="EndEvent_0on0jn9">
+        <dc:Bounds x="552" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="535" y="142" width="70" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1p6tybd_di" bpmnElement="SequenceFlow_1p6tybd">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="340" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_026hstg_di" bpmnElement="SequenceFlow_026hstg">
+        <di:waypoint x="440" y="117" />
+        <di:waypoint x="552" y="117" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
